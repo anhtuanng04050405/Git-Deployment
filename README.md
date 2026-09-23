@@ -121,4 +121,12 @@ Chúng ta hình dung, một dự án khi code sẽ có các quá trình để pu
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/cd19a34c-2fac-41a4-9e0f-e1a6ea38a8fe" />
 </p>
+<p align="center">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/7412835f-241b-4446-a68b-f52a8d2ffe1f" />
+
+</p>
+<p align="center">
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/11afca67-55f1-4cbc-be59-e83be0f01b36" />
+
+</p>
 </details>
