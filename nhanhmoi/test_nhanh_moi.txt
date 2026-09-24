@@ -1,2 +1,6 @@
 hello world
+<<<<<<< HEAD
 hello bạn
+=======
+hello
+>>>>>>> 3b0ccb1 (test rebase)
