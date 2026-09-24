@@ -330,3 +330,16 @@ Sau đó cả 2 thành viên đều push lên nhánh riêng của mình
 
 \- Leader tiến hành xử lý và push code lên
 </details>
+
+<details>
+<summary><b>3. Git Trick</b></summary>
+  
+1. Thay đổi github -> gitdiagram giúp vẽ logic code
+
+<img width="975" height="494" alt="image" src="https://github.com/user-attachments/assets/0038b6bd-0c48-4b5b-8a71-b19dedd2cbb3" />
+
+2. gitingest để tóm tắt dự án, cấu trúc thư mục -> có thể đưa vào AI phân tích
+
+<img width="975" height="489" alt="image" src="https://github.com/user-attachments/assets/1d3a07d3-60f6-45e2-a1d0-e8757f248ca8" />
+
+</details>
