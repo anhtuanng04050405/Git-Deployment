@@ -91,6 +91,7 @@ Chúng ta hình dung, một dự án khi code sẽ có các quá trình để pu
 
 1. Sửa hỏng code (chưa git add)
 - Xem những gì đã sửa: ```git diff (Không bắt buộc)```
+
 - Quy về lại commit cũ: ```git restore <tên\_file>```
 <p align="center">
 <img width="1068" height="346" alt="image" src="https://github.com/user-attachments/assets/41effd2e-dacb-412c-a69e-c10a66c5bf2c" />
@@ -107,14 +108,19 @@ Tạo folder mới -> git clone -> chuyển về folder clone -> git checkout -b
 
 2. ```Git add``` nhầm
 - Xem Staging đang có gì: ```git diff --staged``` (Không bắt buộc)
+
 - Bỏ ra khỏi: ```git restore --staged <tên\_file>```
 
 
 12. Nhánh trong GitHub:
 - ```git branch ${tên nhánh mới}$:``` Tạo nhánh mới
+
 - ```git switch ${tên nhánh}$:``` Chuyển sang nhánh ```${tên nhánh}$```
+
 - ```git switch -c ${tên nhánh}$ ${nhánh cũ}$:``` Tạo nhánh mới và chuyển ngay sang nhánh mới từ nhánh cũ
 **Lưu ý: Các bạn nên tìm hiểu về** ```git checkout``` **nữa**.
+
+  
 - Chuyển vào nhánh chính, sau đó gộp code với nhánh mới khi hoàn thành các tính năng:
 
   ```git switch main```
@@ -124,11 +130,16 @@ Tạo folder mới -> git clone -> chuyển về folder clone -> git checkout -b
 **Lưu ý:**
 
 - Nếu cùng 1 file mà nội dung của 2 nhánh khác nhau thì github sẽ hiện ra thông báo cần xử lý
+
 - Nếu ưu tiên nhánh mới hơn thì dùng câu lệnh: ```git merge ${tên nhánh mới}$ -> git merge -X theirs ${tên nhánh mới}$```
+
 - Nếu bạn muốn lấy file/ folder nào đó từ nhánh mới (Đảm bảo rằng bạn đang đứng ở nhánh mong muốn): ```git restore --source=${tên nhánh mới}$ file1.js file2.css thu\_muc\_moi/```
+
+
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/cd19a34c-2fac-41a4-9e0f-e1a6ea38a8fe" />
 </p>
+
 <p align="center">
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/7412835f-241b-4446-a68b-f52a8d2ffe1f" />
 
@@ -139,45 +150,83 @@ Tạo folder mới -> git clone -> chuyển về folder clone -> git checkout -b
 </p>
 
 13. ```git merge``` và ```git rebase``` từ nhánh A vào nhánh B, phân biệt và  sử dụng hiệu quả?
+
 <img width="700" height="684" alt="image" src="https://github.com/user-attachments/assets/97a71dc2-d90a-43ec-980c-581129e5d273" />
+
 **Nhìn vào hình minh họa merge vs rebase:**
+
 **Merge:**
+
 Khi chúng ta hoặc team phát triển một tính năng nào đó mới, chúng ta thường hay có xu hướng tạo ra branch mới, khi merge code bằng git merge thì sẽ tạo ra một merge commit khi ta gộp vào nhánh chính.
+
 ------> Khi merge như vậy thì lịch sử commit của nhánh main vẫn được đảm bảo.
+
 Về cơ bản, hiểu đơn giản là merge từ nhánh feature vào nhánh main. Nhánh feature vẫn còn đó, nhánh main sẽ nhận được commit mới từ nhánh feature.
+
 **Rebase:**
+
 Tương tự merge, chúng ta cũng có nhánh main và nhánh feature để phát triển sản phẩm/ tính năng mới. Thay vì chúng ta sử dụng git merge chúng ta sẽ sử dụng git rebase, nó sẽ di chuyển các file từ nhánh feature vào nhánh main mà không tạo ra commit mới.
+
 ------> Nhánh feature sẽ không còn lịch sử commit nữa, tại vì tất cả chúng đều đã di chuyển sang nhánh main.
+
 **Tóm lại:**
+
 - ```git merge``` khi chúng ta muốn giữ nguyên commit của nhóm feature và nhánh main. Thể hiện tính rõ ràng và hợp nhất giữa các commit.
+
 - ```git rebase:``` Thích hợp khi chúng ta muốn các commit rõ ràng và gọn gàng hơn, do chúng nhận được các commit từ nhánh feature.
+
 **Quy tắc xuyên suốt:** Luôn pull trước khi merge+push
-**Thực chiến git merge:**
+
+**Thực chiến ```git merge:```**
+
 <img width="1068" height="483" alt="image" src="https://github.com/user-attachments/assets/8907d7ee-f9b1-4620-84cd-42e293359d56" />
+
 Giả sử ta thêm nhánh vidu_merge vào nhánh caulenh1-9
+
 Ở nhánh vidu_merge có file mới là nenday.cpp và sửa đổi file index.html, ta sẽ làm như nào để hợp nhất code từ vidu_merge vào nhánh caulenh1-9?
+
 <img width="1068" height="408" alt="image" src="https://github.com/user-attachments/assets/5fabcf70-d212-433c-896d-43d14020da33" />
+
 **Conflict giữa 2 file:**
+
 <img width="1068" height="144" alt="image" src="https://github.com/user-attachments/assets/a3108668-3475-4e78-8f01-0184c9254a9a" />
+
 **Question:** Các bạn hãy tìm hiểu xem ```--allow-unrelated-histories --no-edit``` mà mình dùng là gì nhé, vì sao phải dùng?
+
 **Hint:**
+
 <img width="241" height="252" alt="image" src="https://github.com/user-attachments/assets/7602d5a0-b3e4-4d29-b5c0-9a04d30c1892" />
 
 ```--no-edit``` -> không mở trình chỉnh sửa
+
 <img width="1068" height="673" alt="image" src="https://github.com/user-attachments/assets/d3e4276e-2f6c-4d58-851f-f6daa44a5b53" />
+
 <img width="1068" height="141" alt="image" src="https://github.com/user-attachments/assets/7f43f127-ca46-4eb3-b677-8fee7cfbf47f" />
-**Thực chiến git rebase:**
+
+**Thực chiến ```git rebase:```**
+
 Tạo nhánh vidu_rebase có cùng lịch sử commit với nhánh mới:
+
 <img width="1068" height="96" alt="image" src="https://github.com/user-attachments/assets/598c78e9-20f1-4654-93f2-116cc0a0ad7d" />
+
 <img width="1068" height="495" alt="image" src="https://github.com/user-attachments/assets/8b083743-e873-494f-813c-ff472f2ec224" />
+
 Giả sử, ta sẽ tạo 1 file mới và sửa 1 file nào đó:
+
 **Thực hiện rebase:**
+
 <img width="1068" height="509" alt="image" src="https://github.com/user-attachments/assets/08ad0836-1c2f-4fad-9cfb-e88baabfd049" />
+
 Thực hiện pull: Kéo code về và vẫn giữ được lịch sử commit
+
 <img width="1068" height="1219" alt="image" src="https://github.com/user-attachments/assets/590eff3e-1213-449c-a7d2-277e65b5249b" />
+
 <img width="1068" height="675" alt="image" src="https://github.com/user-attachments/assets/a085d9cd-b263-4633-a47e-e11ba9b6dac3" />
+
 <img width="1068" height="453" alt="image" src="https://github.com/user-attachments/assets/95cfef26-086a-4853-9ad8-e37f2bbbe5d6" />
-Về cơ bản, git rebase lấy các commit của vidu_rebase đặt sau các commit của nhanh_moi
+
+Về cơ bản, ```git rebase``` lấy các commit của vidu_rebase đặt sau các commit của nhanh_moi
+
 <img width="1068" height="294" alt="image" src="https://github.com/user-attachments/assets/89817c8d-b6ae-4458-bff9-fffa439697b8" />
 
 </details>
