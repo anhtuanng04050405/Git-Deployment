@@ -230,3 +230,103 @@ Về cơ bản, ```git rebase``` lấy các commit của vidu_rebase đặt sau 
 <img width="1068" height="294" alt="image" src="https://github.com/user-attachments/assets/89817c8d-b6ae-4458-bff9-fffa439697b8" />
 
 </details>
+
+<details>
+<summary><b>2. Làm việc nhóm trong GitHub</b></summary>
+  
+**Ví dụ:**
+
+Có 3 tài khoản:
+
+anhtuanng04050405 (Leader)
+
+anhtuanng04052008
+
+anhtuanng4528
+
+**Mục tiêu:** Làm việc nhóm mà không bị conflict mỗi khi push dữ liệu
+
+**Nguyên tắc:**
+
+- Luôn Pull trước khi Push
+- Làm trên nhánh riêng của mình (Ví dụ: Tạo 4 nhánh: main, anhtuanng04050405, anhtuanng04052008, anhtuanng4528)
+- Leader sẽ là người merge các nhánh vào main
+- Phân chia rõ công việc, ai làm phần nào
+
+Push: Đẩy dữ liệu từ máy cá nhân lên server (remote)
+
+Pull = fetch + merge
+
+**Các bước làm:**
+
+**Bước 1.** Leader tạo dự án và các nhánh
+
+\- Leader mở folder dự án và chạy các lệnh:
+
+<img width="975" height="640" alt="image" src="https://github.com/user-attachments/assets/df9f583e-ba48-42c7-8aa8-365491486472" />
+
+
+\- Mời các thành viên tham gia dự án:
+
+Leader truy cập repository trên GitHub -> chọn Settings -> Collaborators -> chọn Add people.
+
+<img width="975" height="441" alt="image" src="https://github.com/user-attachments/assets/ce71c5c3-acad-4340-abab-5d25459b20c9" />
+
+
+\- Tạo nhánh riêng cho các thành viên:
+
+<img width="975" height="518" alt="image" src="https://github.com/user-attachments/assets/845d5d32-f218-41f2-82b4-fe74039ee462" />
+
+
+**Bước 2. Các thành viên lấy dự án về máy và chuyển nhánh**
+
+Tải toàn bộ dự án về máy và chuyển về nhánh của mình:
+
+<img width="975" height="370" alt="image" src="https://github.com/user-attachments/assets/3aaed0d7-cc11-4978-8b8e-b16c8a70c05d" />
+
+
+**Bước 3:Quy trình hàng ngày**
+
+1\. Leader kiểm tra và merge vào nhánh main
+
+2\. Các thành viên pull code từ nhánh main vào nhánh cá nhân
+
+3\. Lưu thay đổi ở local
+
+4\. Đẩy code lên nhánh riêng
+
+5\. Đề xuất gộp code (Pull Request) và Leader duyệt (Merge) *(Nếu có nhu cầu)*
+
+Ví dụ:
+
+\- Leader khởi tạo khung code ban đầu và push lên github:
+
+<img width="975" height="298" alt="image" src="https://github.com/user-attachments/assets/07992fe6-66c8-4b69-be57-ac84f5c82574" />
+
+
+\- Các thành viên pull code về
+
+<img width="975" height="656" alt="image" src="https://github.com/user-attachments/assets/7e092375-1738-49b4-9c88-fa9612fe4e2a" />
+
+
+\- Tiến hành làm nhiệm vụ của mình
+
+Ví dụ: anhtuanng04052008 viết hàm tính tổng a và b
+
+anhtuanng4528 viết hàm tính hiệu a và b
+
+Sau đó cả 2 thành viên đều push lên nhánh riêng của mình
+
+<img width="861" height="514" alt="image" src="https://github.com/user-attachments/assets/b053102e-7c5e-4370-a57c-a5d5022bc150" />
+
+
+<img width="857" height="527" alt="image" src="https://github.com/user-attachments/assets/0382bb85-84cf-4220-9ccb-14cc5d55dfc1" />
+
+
+\- Leader sẽ xử lý conflict:
+
+<img width="975" height="427" alt="image" src="https://github.com/user-attachments/assets/4661ca67-12cc-43ac-8e0b-d780cb22b5ba" />
+
+
+\- Leader tiến hành xử lý và push code lên
+</details>
